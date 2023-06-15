@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="extra_product_product_template_only_form_view" model="ir.ui.view">
+      <field name="name">extra_product.product.template.product.form</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='general_information']" position="after">
+            <page string="Extra products" name="extra_products">
+                <!-- <group> -->
+                    <field name="extra_product_ids">
+                        <tree editable="bottom">
+                            <field name="product_product_id"/>
+                            <!-- <field name="quantity"/> -->
+                            <field name="price"/>
+                         </tree>
+                    </field>
+                <!-- </group> -->
+            </page>
+        </xpath>
+      </field>
+  </record>
+
+</odoo>
