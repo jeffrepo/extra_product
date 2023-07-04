@@ -11,14 +11,13 @@ class PosSession(models.Model):
         new_model = 'extra_product_pos.extra'
         if new_model not in result:
             result.append(new_model)
-
         return result
 
     def _loader_params_extra_product_pos_extra(self):
         return {
             'search_params': {
                 'domain': [('company_id', '=', self.config_id.company_id.id)],
-                'fields': ['product_product_id', 'price','quantity','product_id'],
+                'fields': ['product_product_id', 'price','quantity','product_id','note'],
             },
         }
 
@@ -29,4 +28,5 @@ class PosSession(models.Model):
     def _loader_params_product_product(self):
         result = super(PosSession, self)._loader_params_product_product()
         result['search_params']['fields'].append('extra_product_ids')
+        result['search_params']['fields'].append('show_auto_screen')
         return result

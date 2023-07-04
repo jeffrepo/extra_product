@@ -10,4 +10,5 @@ class ExtraProductPosExtra(models.Model):
     product_product_id = fields.Many2one('product.product','Product')
     quantity = fields.Float('Quantity')
     price = fields.Float('Price')
+    note = fields.Boolean('Note')
     company_id = fields.Many2one("res.company", string="Company", required=True, default=lambda self: self.env.user.company_id)

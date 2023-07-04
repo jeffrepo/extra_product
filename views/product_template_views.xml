@@ -9,11 +9,15 @@
         <xpath expr="//page[@name='general_information']" position="after">
             <page string="Extra products" name="extra_products">
                 <!-- <group> -->
+                    <group>
+                        <field name="show_auto_screen"/>
+                    </group>
                     <field name="extra_product_ids">
                         <tree editable="bottom">
                             <field name="product_product_id"/>
                             <!-- <field name="quantity"/> -->
                             <field name="price"/>
+                            <field name="note"/>
                          </tree>
                     </field>
                 <!-- </group> -->
