@@ -40,7 +40,9 @@ odoo.define('extra_product_pos.models', function (require) {
             var extra_product_db = this.pos.db.get_product_by_id(product_id);
             // order.add_product(extra_product_db, { price: price, quantity: 1, extras: { price_manually_set: true } });
             var note = extra_product_db.display_name
-            line.set_customer_note(note)
+            // line.set_customer_note(note)
+            line.set_note(note)
+            
         }
 
       }
